@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>AStar API Demo</title>
+    </head>
+    <body>
+        <h2>Open the console to see the JS log.</h2>
+        <br><br>
+        <script  type="text/javascript" src="astar.js"></script>
+        <script>
+        var testMap = [
+            [0, 0, 0, -3, 1, 0, 0, 0]
+            , [0, 0, 1, 1, 5, 0, 0, 0]
+            , [0, 0, 1, 3, 1, 0, 0, 0]
+            , [0, 0, 5, 1, 1, 0, 1, 0]
+            , [0, 0, 0, 1, 7, 0, 1, 0]
+            , [0, 1, 0, 0, 1, 0, 1, 0]
+            , [0, 1, 'abba', 0, 0, 0, 0, 0]
+            , [0, 0, 1, 2, 1, 0, 6, 0]
+            , [0, 0, 1, 1, 1, 0, 0, 0]      
+       ];
+        var testMapAlt = [
+            ['$z2#', '$z2#', '$z2#', 'jdishiuj', 'jdishiuj', '$x@', '$z2#', '$z2#']
+            , ['$z2#', '$z2#', 'jdishiuj', 'gfg', 'jdishiuj', '$z2#', '$z2#', '$z2#']
+            , ['$z2#', '$z2#', 'jdishiuj', 'jdishiuj', 'jdishiuj', '$z2#', '$z2#', '$z2#']
+            , ['$z2#', '$z2#', 'jdishiuj', 'jdishiuj', 'dfd', '$z2#', 'a', '$z2#']
+            , ['$z2#', '$z2#', '$z2#', 'jdishiuj', 'jdishiuj', '$z2#', '$z', '$z2#']
+            , ['$z2#', 'jdishiuj', '$z2#', '$z2#', 'jdishiuj', '$z2#', 'fff', '$z2#']
+            , ['$z2#', 'jdishiuj', 'jdishiuj', '$z2#', '$z2#', '$z2#', '$z2#', '$z2#']
+            , ['$z2#', '$z2#', 'jdishiuj', 'sss', 'jdishiuj', '$z2#', 'jdishiuj', '$z2#']
+            , ['$z2#', '$z2#', 'jdishiuj', 'jdishiuj', '123', '$z2#', '$z2#', '$z2#']        
+        ];
+            
+            
+        /*
+        //please see the star.js file for full documentation
+        PARAMETERS:
+            a. testMap = a 2-D Javascript array showing a Cartesian graph with 0,0 at the top-left
+            b.  startX, startY, goalX, goalY = the point coordinates for the start and end points
+        */
+        
+        //the below method returns a set of integers representing the moved on a 2D plane
+        //required to move from start to finish, using this key:
+        //UP = 3, DOWN = 0, LEFT = 1, RIGHT = 2
+        var answerArray = AStar.getDirectionArray(testMap, 0, 0, 7, 0);
+        console.log(answerArray);
+        
+        //the below method will return an array of points in
+        //string format ("x, y"), in order of movement, that would be moved through on the path
+        answerArray = AStar.getPointArray(testMap, 0, 0, 7, 0);
+        console.log(answerArray);
+        
+        //if you have different symbols than 0 as the "open spot" symbol, you can change it with an extra optional parameter
+        answerArray = AStar.getDirectionArray(testMapAlt, 0, 0, 7, 0, '$z2#');
+        console.log(answerArray);
+        answerArray = AStar.getPointArray(testMapAlt, 0, 0, 7, 0, '$z2#');
+        console.log(answerArray);
+            
+            
+            
+        </script>
+    </body>
+</html>
