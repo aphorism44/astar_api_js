@@ -1,5 +1,5 @@
 
-This API was created to work with a JavaScript canvas library (enchant.js). Here's an amusing blog entry explaining the impetus behind its creation: http://www.aphorism44.com/blog/blogEntry.php?entryId=16 
+This API was created to work with a JavaScript canvas library (enchant.js). Here's an amusing blog entry explaining the impetus behind its creation: https://aphorism44.wordpress.com/2014/10/19/game-sandbox-v-how-to-move-a-character-across-the-screen/
 
 Basically, this module is a simple implementation of the A* pathfinding algorithm, on the model of a 2-D Cartesian graph. If you feed in the start and end points, along with a 2D array representing the map, and optionally the "accessible spot" symbol (defaulted to "0"), it will feed back the path.
 
